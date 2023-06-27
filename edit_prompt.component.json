@@ -1,0 +1,679 @@
+{
+  "last_node_id": 15,
+  "last_link_id": 26,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "ToBasicPipe",
+      "pos": [
+        1060,
+        180
+      ],
+      "size": {
+        "0": 241.79998779296875,
+        "1": 106
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 22
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 26
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 24
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 5
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "links": [
+            11
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ToBasicPipe"
+      }
+    },
+    {
+      "id": 5,
+      "type": "ComponentInput",
+      "pos": [
+        90,
+        230
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "text",
+          "type": null,
+          "links": [
+            8
+          ],
+          "label": "positive"
+        }
+      ],
+      "title": "3.Component Input",
+      "properties": {},
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 9,
+      "type": "ComponentInputOptional",
+      "pos": [
+        90,
+        490
+      ],
+      "size": {
+        "0": 193.1999969482422,
+        "1": 26
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            12
+          ],
+          "label": "vae_opt"
+        }
+      ],
+      "title": "5.Component Input (OPT)",
+      "properties": {},
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 8,
+      "type": "EditBasicPipe",
+      "pos": [
+        1400,
+        180
+      ],
+      "size": {
+        "0": 267,
+        "1": 126
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "link": 11
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 12,
+          "slot_index": 3
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": null
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "links": [
+            13
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "color": ""
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EditBasicPipe"
+      }
+    },
+    {
+      "id": 10,
+      "type": "ComponentOutput",
+      "pos": [
+        1750,
+        180
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "BASIC_PIPE",
+          "type": "BASIC_PIPE",
+          "link": 13,
+          "label": null
+        }
+      ],
+      "properties": {},
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 3,
+      "type": "CLIPTextEncode",
+      "pos": [
+        770,
+        90
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 23
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 8,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          },
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 7,
+      "type": "ComponentInput",
+      "pos": [
+        90,
+        110
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "rename after connect",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "title": "2.Component Input",
+      "properties": {},
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 6,
+      "type": "ComponentInput",
+      "pos": [
+        90,
+        360
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "text",
+          "type": null,
+          "links": [
+            9
+          ],
+          "label": "negative"
+        }
+      ],
+      "title": "4.Component Input",
+      "properties": {},
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 14,
+      "type": "ComponentInput",
+      "pos": [
+        89,
+        -29
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "links": [
+            21
+          ],
+          "slot_index": 0,
+          "label": "basic_pipe"
+        }
+      ],
+      "title": "1.Component Input",
+      "properties": {},
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncode",
+      "pos": [
+        763,
+        330
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 25
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 9,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          },
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            7
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 15,
+      "type": "FromBasicPipe",
+      "pos": [
+        403,
+        177
+      ],
+      "size": {
+        "0": 241.79998779296875,
+        "1": 106
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            22
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [
+            23,
+            25,
+            26
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            24
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FromBasicPipe"
+      }
+    }
+  ],
+  "links": [
+    [
+      5,
+      3,
+      0,
+      2,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      4,
+      0,
+      2,
+      4,
+      "CONDITIONING"
+    ],
+    [
+      8,
+      5,
+      0,
+      3,
+      1,
+      "STRING"
+    ],
+    [
+      9,
+      6,
+      0,
+      4,
+      1,
+      "STRING"
+    ],
+    [
+      11,
+      2,
+      0,
+      8,
+      0,
+      "BASIC_PIPE"
+    ],
+    [
+      12,
+      9,
+      0,
+      8,
+      3,
+      "VAE"
+    ],
+    [
+      13,
+      8,
+      0,
+      10,
+      0,
+      "*"
+    ],
+    [
+      21,
+      14,
+      0,
+      15,
+      0,
+      "BASIC_PIPE"
+    ],
+    [
+      22,
+      15,
+      0,
+      2,
+      0,
+      "MODEL"
+    ],
+    [
+      23,
+      15,
+      1,
+      3,
+      0,
+      "CLIP"
+    ],
+    [
+      24,
+      15,
+      2,
+      2,
+      2,
+      "VAE"
+    ],
+    [
+      25,
+      15,
+      1,
+      4,
+      0,
+      "CLIP"
+    ],
+    [
+      26,
+      15,
+      1,
+      2,
+      1,
+      "CLIP"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4,
+  "output": {
+    "2": {
+      "inputs": {
+        "model": [
+          "15",
+          0
+        ],
+        "clip": [
+          "15",
+          1
+        ],
+        "vae": [
+          "15",
+          2
+        ],
+        "positive": [
+          "3",
+          0
+        ],
+        "negative": [
+          "4",
+          0
+        ]
+      },
+      "class_type": "ToBasicPipe"
+    },
+    "3": {
+      "inputs": {
+        "text": [
+          "5",
+          0
+        ],
+        "clip": [
+          "15",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "4": {
+      "inputs": {
+        "text": [
+          "6",
+          0
+        ],
+        "clip": [
+          "15",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "5": {
+      "inputs": {}
+    },
+    "6": {
+      "inputs": {}
+    },
+    "7": {
+      "inputs": {}
+    },
+    "8": {
+      "inputs": {
+        "basic_pipe": [
+          "2",
+          0
+        ],
+        "vae": [
+          "9",
+          0
+        ]
+      },
+      "class_type": "EditBasicPipe"
+    },
+    "9": {
+      "inputs": {}
+    },
+    "10": {
+      "inputs": {
+        "BASIC_PIPE": [
+          "8",
+          0
+        ]
+      }
+    },
+    "14": {
+      "inputs": {}
+    },
+    "15": {
+      "inputs": {
+        "basic_pipe": [
+          "14",
+          0
+        ]
+      },
+      "class_type": "FromBasicPipe"
+    }
+  }
+}

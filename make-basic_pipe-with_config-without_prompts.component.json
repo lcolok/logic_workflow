@@ -1,0 +1,731 @@
+{
+  "last_node_id": 16,
+  "last_link_id": 25,
+  "nodes": [
+    {
+      "id": 10,
+      "type": "ComponentOutput",
+      "pos": [
+        1750,
+        180
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "BASIC_PIPE",
+          "type": "BASIC_PIPE",
+          "link": 13,
+          "label": null
+        }
+      ],
+      "properties": {},
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 7,
+      "type": "ComponentInput",
+      "pos": [
+        90,
+        110
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "ckpt_name",
+          "type": null,
+          "links": [
+            14
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "2.Component Input",
+      "properties": {},
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 14,
+      "type": "ComponentInput",
+      "pos": [
+        89,
+        -29
+      ],
+      "size": {
+        "0": 178,
+        "1": 26
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "config_name",
+          "type": null,
+          "links": [
+            15
+          ],
+          "slot_index": 0,
+          "label": "config_name"
+        }
+      ],
+      "title": "1.Component Input",
+      "properties": {},
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 9,
+      "type": "ComponentInputOptional",
+      "pos": [
+        88,
+        392
+      ],
+      "size": {
+        "0": 193.1999969482422,
+        "1": 26
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            12
+          ],
+          "label": "vae_opt"
+        }
+      ],
+      "title": "3.Component Input (OPT)",
+      "properties": {},
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 8,
+      "type": "EditBasicPipe",
+      "pos": [
+        1400,
+        180
+      ],
+      "size": {
+        "0": 267,
+        "1": 126
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "link": 11
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 12,
+          "slot_index": 3
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": null
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "links": [
+            13
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "color": ""
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EditBasicPipe"
+      }
+    },
+    {
+      "id": 2,
+      "type": "ToBasicPipe",
+      "pos": [
+        1060,
+        180
+      ],
+      "size": {
+        "0": 241.79998779296875,
+        "1": 106
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 16
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 21
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 19
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 22,
+          "slot_index": 3
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 23,
+          "slot_index": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "links": [
+            11
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ToBasicPipe"
+      }
+    },
+    {
+      "id": 12,
+      "type": "CheckpointLoader",
+      "pos": [
+        391,
+        181
+      ],
+      "size": {
+        "0": 315,
+        "1": 122
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "config_name",
+          "type": "anything_v3.yaml,v1-inference.yaml,v1-inference_clip_skip_2.yaml,v1-inference_clip_skip_2_fp16.yaml,v1-inference_fp16.yaml,v1-inpainting-inference.yaml,v2-inference-v.yaml,v2-inference-v_fp32.yaml,v2-inference.yaml,v2-inference_fp32.yaml,v2-inpainting-inference.yaml",
+          "link": 15,
+          "widget": {
+            "name": "config_name",
+            "config": [
+              [
+                "anything_v3.yaml",
+                "v1-inference.yaml",
+                "v1-inference_clip_skip_2.yaml",
+                "v1-inference_clip_skip_2_fp16.yaml",
+                "v1-inference_fp16.yaml",
+                "v1-inpainting-inference.yaml",
+                "v2-inference-v.yaml",
+                "v2-inference-v_fp32.yaml",
+                "v2-inference.yaml",
+                "v2-inference_fp32.yaml",
+                "v2-inpainting-inference.yaml"
+              ]
+            ]
+          }
+        },
+        {
+          "name": "ckpt_name",
+          "type": "512-base-ema.ckpt,512-depth-ema.ckpt,768-v-ema.ckpt,AnythingV5Ink_v32Ink.safetensors,AnythingV5Ink_v5PrtRE.safetensors,BracingEvoMix_v1.safetensors,CamelliaMix_2.5D-fp16-pruned.safetensors,CamelliaMix_Line_V2.safetensors,Camelliamix_V2-fp16-pruned.safetensors,CheckpointYesmix_v15.safetensors,Counterfeit-V2.5_fp16.safetensors,CounterfeitV30_v30.safetensors,GuoFeng3.3.safetensors,HD-16.ckpt,Hiten girl_anime_8k_wallpaper_4k.ckpt,Kaedelic_bs2_3500_f16.ckpt,M4RV3LSDUNGEONSNEWV30_mD30.safetensors,NovelAi_leak/animefull-final-pruned/model.ckpt,NovelAi_leak/animefull-latest/model.ckpt,NovelAi_leak/animefull-prevgood/model.ckpt,NovelAi_leak/animesfw-final-pruned/model.ckpt,NovelAi_leak/animesfw-latest/model.ckpt,NovelAi_leak/animesfw-prevgood/model.ckpt,PVC-AO.safetensors,Trinart/trinart_stable_diffusion_115K_steps/trinart2_step115000.ckpt,Trinart/trinart_stable_diffusion_60K_steps/trinart2_step60000.ckpt,Trinart/trinart_stable_diffusion_95K_steps/trinart2_step95000.ckpt,abyssorangemix3AOM3_aom3.safetensors,abyssorangemix3AOM3_aom3a1.safetensors,abyssorangemix3AOM3_aom3a1b.safetensors,abyssorangemix3AOM3_aom3a2.safetensors,abyssorangemix3AOM3_aom3a3.safetensors,alphaLyrae_avaloriaedFP16Prunned.safetensors,anime700k-64bs-0.1ucg-penultimate-1epoch-clip-ema-continue-76000-ema-pruned.ckpt,anything-v3-fp32-pruned.safetensors,anything-v4.0-pruned-fp16.safetensors,anything-v4.0-pruned.safetensors,anything-v4.5-pruned-fp16.ckpt,anything-v4.5-pruned.safetensors,awpainting_v10.safetensors,awportrait_v10.safetensors,braBeautifulRealistic_brav5.safetensors,braBeautifulRealistic_v40.safetensors,breakdomainanime_A0440.safetensors,breakdro_I1464.safetensors,camelliamixLine_v10.safetensors,cardologyMix_v4.safetensors,chilloutmix_NiCkpt.ckpt,chilloutmix_NiPrunedFp16.safetensors,chilloutmix_NiPrunedFp16Fix.safetensors,chilloutmix_NiPrunedFp32.safetensors,chilloutmix_NiPrunedFp32Fix.safetensors,cityscape_01.ckpt,corneos7thHeavenMix_100.safetensors,curiousmerge25D_v50V4V2.safetensors,cuteRichstyle15_cuteRichstyle.ckpt,cyberrealistic_v31.safetensors,dalcefoPainting_3rd.safetensors,dalcefoPainting_v4.ckpt,ddiconLora_v20.safetensors,disneyPixarCartoon_type_a.safetensors,disneyPixarCartoon_type_b.safetensors,dreamshaper_33BakedVae.safetensors,dreamshaper_4BakedVaeFp16.safetensors,dreamshaper_5Bakedvae.safetensors,dreamshaper_631BakedVae.safetensors,dreamshaper_6BakedVae.safetensors,duchaitenniji_cuteV235.safetensors,evoart_v10.safetensors,expmixLine_v20.safetensors,exsoular_v10.safetensors,facebombmix_v1.safetensors,fcanimemix2FcAnime_v2.safetensors,fortyfourOilpainting_v10.safetensors,gameIconInstitute_v22.safetensors,gameiconinstitute_v20.safetensors,ghostmix_v12.safetensors,ghostmix_v20Bakedvae.safetensors,graphicArt_graphicArtBeta11.safetensors,illuminatiDiffusionV1_v11.safetensors,instruct-pix2pix-00-22000.safetensors,kidsmix_v10.safetensors,lyriel_v16.safetensors,majicmixRealistic_v4.safetensors,majicmixRealistic_v5.safetensors,majicmixRealistic_v5Preview.safetensors,majicmixRealistic_v6.safetensors,majicmixSombre_v20.safetensors,manmaruMix_v10.safetensors,maturemalemix_v14.safetensors,mdjrny-v4.ckpt,meichidarkMix_meichidarkMixV2.safetensors,meinamix_meinaV10.safetensors,meinamix_meinaV8.safetensors,midjourneyPapercut_v1.ckpt,mistoonAnime_v10.safetensors,mistoonSapphire_v10.safetensors,model.ckpt,moonmix_utopia30.safetensors,neverendingDreamNED_v122BakedVae.safetensors,nextphoto_v10.safetensors,onePieceWanoStyle_wanostyle20.safetensors,photon_v1.safetensors,productDesign_eddiemauro20.safetensors,protogenV22Anime_22.safetensors,protogenX34Photorealism.ckpt,realisian_v40.safetensors,realisticVisionV13_v13Inpainting.safetensors,realisticVisionV20_v20NoVAE.safetensors,revAnimated_v11.safetensors,revAnimated_v121.safetensors,revAnimated_v122.safetensors,samaritan3dCartoon_v10.safetensors,sd-v1-5-inpainting.ckpt,simplemix_V2.safetensors,stickerArt_sticker.safetensors,tAnimeV2_v20.safetensors,tShirtPrintDesignsTest_v01.ckpt,toonyou_beta2.safetensors,v1-5-pruned-emaonly.ckpt,v1-5-pruned.ckpt,v2-1_512-ema-pruned.ckpt,v2-1_768-nonema-pruned.ckpt,vynstickBWVinyl_any3Version.safetensors,wd-1-3-penultimate-ucg-cont.ckpt,wd-1-5-beta2-aesthetic-fp16.safetensors,wd-1-5-beta2-fp16.safetensors,wd-v1-3-float32.ckpt,wd1-2_sd1-4_merged.ckpt,xxmix9realistic_v30.safetensors,xxmix9realistic_v40.safetensors,yu_jie_half.ckpt",
+          "link": 14,
+          "widget": {
+            "name": "ckpt_name",
+            "config": [
+              [
+                "512-base-ema.ckpt",
+                "512-depth-ema.ckpt",
+                "768-v-ema.ckpt",
+                "AnythingV5Ink_v32Ink.safetensors",
+                "AnythingV5Ink_v5PrtRE.safetensors",
+                "BracingEvoMix_v1.safetensors",
+                "CamelliaMix_2.5D-fp16-pruned.safetensors",
+                "CamelliaMix_Line_V2.safetensors",
+                "Camelliamix_V2-fp16-pruned.safetensors",
+                "CheckpointYesmix_v15.safetensors",
+                "Counterfeit-V2.5_fp16.safetensors",
+                "CounterfeitV30_v30.safetensors",
+                "GuoFeng3.3.safetensors",
+                "HD-16.ckpt",
+                "Hiten girl_anime_8k_wallpaper_4k.ckpt",
+                "Kaedelic_bs2_3500_f16.ckpt",
+                "M4RV3LSDUNGEONSNEWV30_mD30.safetensors",
+                "NovelAi_leak/animefull-final-pruned/model.ckpt",
+                "NovelAi_leak/animefull-latest/model.ckpt",
+                "NovelAi_leak/animefull-prevgood/model.ckpt",
+                "NovelAi_leak/animesfw-final-pruned/model.ckpt",
+                "NovelAi_leak/animesfw-latest/model.ckpt",
+                "NovelAi_leak/animesfw-prevgood/model.ckpt",
+                "PVC-AO.safetensors",
+                "Trinart/trinart_stable_diffusion_115K_steps/trinart2_step115000.ckpt",
+                "Trinart/trinart_stable_diffusion_60K_steps/trinart2_step60000.ckpt",
+                "Trinart/trinart_stable_diffusion_95K_steps/trinart2_step95000.ckpt",
+                "abyssorangemix3AOM3_aom3.safetensors",
+                "abyssorangemix3AOM3_aom3a1.safetensors",
+                "abyssorangemix3AOM3_aom3a1b.safetensors",
+                "abyssorangemix3AOM3_aom3a2.safetensors",
+                "abyssorangemix3AOM3_aom3a3.safetensors",
+                "alphaLyrae_avaloriaedFP16Prunned.safetensors",
+                "anime700k-64bs-0.1ucg-penultimate-1epoch-clip-ema-continue-76000-ema-pruned.ckpt",
+                "anything-v3-fp32-pruned.safetensors",
+                "anything-v4.0-pruned-fp16.safetensors",
+                "anything-v4.0-pruned.safetensors",
+                "anything-v4.5-pruned-fp16.ckpt",
+                "anything-v4.5-pruned.safetensors",
+                "awpainting_v10.safetensors",
+                "awportrait_v10.safetensors",
+                "braBeautifulRealistic_brav5.safetensors",
+                "braBeautifulRealistic_v40.safetensors",
+                "breakdomainanime_A0440.safetensors",
+                "breakdro_I1464.safetensors",
+                "camelliamixLine_v10.safetensors",
+                "cardologyMix_v4.safetensors",
+                "chilloutmix_NiCkpt.ckpt",
+                "chilloutmix_NiPrunedFp16.safetensors",
+                "chilloutmix_NiPrunedFp16Fix.safetensors",
+                "chilloutmix_NiPrunedFp32.safetensors",
+                "chilloutmix_NiPrunedFp32Fix.safetensors",
+                "cityscape_01.ckpt",
+                "corneos7thHeavenMix_100.safetensors",
+                "curiousmerge25D_v50V4V2.safetensors",
+                "cuteRichstyle15_cuteRichstyle.ckpt",
+                "cyberrealistic_v31.safetensors",
+                "dalcefoPainting_3rd.safetensors",
+                "dalcefoPainting_v4.ckpt",
+                "ddiconLora_v20.safetensors",
+                "disneyPixarCartoon_type_a.safetensors",
+                "disneyPixarCartoon_type_b.safetensors",
+                "dreamshaper_33BakedVae.safetensors",
+                "dreamshaper_4BakedVaeFp16.safetensors",
+                "dreamshaper_5Bakedvae.safetensors",
+                "dreamshaper_631BakedVae.safetensors",
+                "dreamshaper_6BakedVae.safetensors",
+                "duchaitenniji_cuteV235.safetensors",
+                "evoart_v10.safetensors",
+                "expmixLine_v20.safetensors",
+                "exsoular_v10.safetensors",
+                "facebombmix_v1.safetensors",
+                "fcanimemix2FcAnime_v2.safetensors",
+                "fortyfourOilpainting_v10.safetensors",
+                "gameIconInstitute_v22.safetensors",
+                "gameiconinstitute_v20.safetensors",
+                "ghostmix_v12.safetensors",
+                "ghostmix_v20Bakedvae.safetensors",
+                "graphicArt_graphicArtBeta11.safetensors",
+                "illuminatiDiffusionV1_v11.safetensors",
+                "instruct-pix2pix-00-22000.safetensors",
+                "kidsmix_v10.safetensors",
+                "lyriel_v16.safetensors",
+                "majicmixRealistic_v4.safetensors",
+                "majicmixRealistic_v5.safetensors",
+                "majicmixRealistic_v5Preview.safetensors",
+                "majicmixRealistic_v6.safetensors",
+                "majicmixSombre_v20.safetensors",
+                "manmaruMix_v10.safetensors",
+                "maturemalemix_v14.safetensors",
+                "mdjrny-v4.ckpt",
+                "meichidarkMix_meichidarkMixV2.safetensors",
+                "meinamix_meinaV10.safetensors",
+                "meinamix_meinaV8.safetensors",
+                "midjourneyPapercut_v1.ckpt",
+                "mistoonAnime_v10.safetensors",
+                "mistoonSapphire_v10.safetensors",
+                "model.ckpt",
+                "moonmix_utopia30.safetensors",
+                "neverendingDreamNED_v122BakedVae.safetensors",
+                "nextphoto_v10.safetensors",
+                "onePieceWanoStyle_wanostyle20.safetensors",
+                "photon_v1.safetensors",
+                "productDesign_eddiemauro20.safetensors",
+                "protogenV22Anime_22.safetensors",
+                "protogenX34Photorealism.ckpt",
+                "realisian_v40.safetensors",
+                "realisticVisionV13_v13Inpainting.safetensors",
+                "realisticVisionV20_v20NoVAE.safetensors",
+                "revAnimated_v11.safetensors",
+                "revAnimated_v121.safetensors",
+                "revAnimated_v122.safetensors",
+                "samaritan3dCartoon_v10.safetensors",
+                "sd-v1-5-inpainting.ckpt",
+                "simplemix_V2.safetensors",
+                "stickerArt_sticker.safetensors",
+                "tAnimeV2_v20.safetensors",
+                "tShirtPrintDesignsTest_v01.ckpt",
+                "toonyou_beta2.safetensors",
+                "v1-5-pruned-emaonly.ckpt",
+                "v1-5-pruned.ckpt",
+                "v2-1_512-ema-pruned.ckpt",
+                "v2-1_768-nonema-pruned.ckpt",
+                "vynstickBWVinyl_any3Version.safetensors",
+                "wd-1-3-penultimate-ucg-cont.ckpt",
+                "wd-1-5-beta2-aesthetic-fp16.safetensors",
+                "wd-1-5-beta2-fp16.safetensors",
+                "wd-v1-3-float32.ckpt",
+                "wd1-2_sd1-4_merged.ckpt",
+                "xxmix9realistic_v30.safetensors",
+                "xxmix9realistic_v40.safetensors",
+                "yu_jie_half.ckpt"
+              ]
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            16
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            21,
+            24,
+            25
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            19
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoader"
+      },
+      "widgets_values": [
+        "anything_v3.yaml",
+        "512-base-ema.ckpt"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "CLIPTextEncode",
+      "pos": [
+        795,
+        70
+      ],
+      "size": [
+        210,
+        76
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            22
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 16,
+      "type": "CLIPTextEncode",
+      "pos": [
+        793,
+        352
+      ],
+      "size": [
+        210,
+        76
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            23
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    }
+  ],
+  "links": [
+    [
+      11,
+      2,
+      0,
+      8,
+      0,
+      "BASIC_PIPE"
+    ],
+    [
+      12,
+      9,
+      0,
+      8,
+      3,
+      "VAE"
+    ],
+    [
+      13,
+      8,
+      0,
+      10,
+      0,
+      "*"
+    ],
+    [
+      14,
+      7,
+      0,
+      12,
+      1,
+      "512-base-ema.ckpt,512-depth-ema.ckpt,768-v-ema.ckpt,AnythingV5Ink_v32Ink.safetensors,AnythingV5Ink_v5PrtRE.safetensors,BracingEvoMix_v1.safetensors,CamelliaMix_2.5D-fp16-pruned.safetensors,CamelliaMix_Line_V2.safetensors,Camelliamix_V2-fp16-pruned.safetensors,CheckpointYesmix_v15.safetensors,Counterfeit-V2.5_fp16.safetensors,CounterfeitV30_v30.safetensors,GuoFeng3.3.safetensors,HD-16.ckpt,Hiten girl_anime_8k_wallpaper_4k.ckpt,Kaedelic_bs2_3500_f16.ckpt,M4RV3LSDUNGEONSNEWV30_mD30.safetensors,NovelAi_leak/animefull-final-pruned/model.ckpt,NovelAi_leak/animefull-latest/model.ckpt,NovelAi_leak/animefull-prevgood/model.ckpt,NovelAi_leak/animesfw-final-pruned/model.ckpt,NovelAi_leak/animesfw-latest/model.ckpt,NovelAi_leak/animesfw-prevgood/model.ckpt,PVC-AO.safetensors,Trinart/trinart_stable_diffusion_115K_steps/trinart2_step115000.ckpt,Trinart/trinart_stable_diffusion_60K_steps/trinart2_step60000.ckpt,Trinart/trinart_stable_diffusion_95K_steps/trinart2_step95000.ckpt,abyssorangemix3AOM3_aom3.safetensors,abyssorangemix3AOM3_aom3a1.safetensors,abyssorangemix3AOM3_aom3a1b.safetensors,abyssorangemix3AOM3_aom3a2.safetensors,abyssorangemix3AOM3_aom3a3.safetensors,alphaLyrae_avaloriaedFP16Prunned.safetensors,anime700k-64bs-0.1ucg-penultimate-1epoch-clip-ema-continue-76000-ema-pruned.ckpt,anything-v3-fp32-pruned.safetensors,anything-v4.0-pruned-fp16.safetensors,anything-v4.0-pruned.safetensors,anything-v4.5-pruned-fp16.ckpt,anything-v4.5-pruned.safetensors,awpainting_v10.safetensors,awportrait_v10.safetensors,braBeautifulRealistic_brav5.safetensors,braBeautifulRealistic_v40.safetensors,breakdomainanime_A0440.safetensors,breakdro_I1464.safetensors,camelliamixLine_v10.safetensors,cardologyMix_v4.safetensors,chilloutmix_NiCkpt.ckpt,chilloutmix_NiPrunedFp16.safetensors,chilloutmix_NiPrunedFp16Fix.safetensors,chilloutmix_NiPrunedFp32.safetensors,chilloutmix_NiPrunedFp32Fix.safetensors,cityscape_01.ckpt,corneos7thHeavenMix_100.safetensors,curiousmerge25D_v50V4V2.safetensors,cuteRichstyle15_cuteRichstyle.ckpt,cyberrealistic_v31.safetensors,dalcefoPainting_3rd.safetensors,dalcefoPainting_v4.ckpt,ddiconLora_v20.safetensors,disneyPixarCartoon_type_a.safetensors,disneyPixarCartoon_type_b.safetensors,dreamshaper_33BakedVae.safetensors,dreamshaper_4BakedVaeFp16.safetensors,dreamshaper_5Bakedvae.safetensors,dreamshaper_631BakedVae.safetensors,dreamshaper_6BakedVae.safetensors,duchaitenniji_cuteV235.safetensors,evoart_v10.safetensors,expmixLine_v20.safetensors,exsoular_v10.safetensors,facebombmix_v1.safetensors,fcanimemix2FcAnime_v2.safetensors,fortyfourOilpainting_v10.safetensors,gameIconInstitute_v22.safetensors,gameiconinstitute_v20.safetensors,ghostmix_v12.safetensors,ghostmix_v20Bakedvae.safetensors,graphicArt_graphicArtBeta11.safetensors,illuminatiDiffusionV1_v11.safetensors,instruct-pix2pix-00-22000.safetensors,kidsmix_v10.safetensors,lyriel_v16.safetensors,majicmixRealistic_v4.safetensors,majicmixRealistic_v5.safetensors,majicmixRealistic_v5Preview.safetensors,majicmixRealistic_v6.safetensors,majicmixSombre_v20.safetensors,manmaruMix_v10.safetensors,maturemalemix_v14.safetensors,mdjrny-v4.ckpt,meichidarkMix_meichidarkMixV2.safetensors,meinamix_meinaV10.safetensors,meinamix_meinaV8.safetensors,midjourneyPapercut_v1.ckpt,mistoonAnime_v10.safetensors,mistoonSapphire_v10.safetensors,model.ckpt,moonmix_utopia30.safetensors,neverendingDreamNED_v122BakedVae.safetensors,nextphoto_v10.safetensors,onePieceWanoStyle_wanostyle20.safetensors,photon_v1.safetensors,productDesign_eddiemauro20.safetensors,protogenV22Anime_22.safetensors,protogenX34Photorealism.ckpt,realisian_v40.safetensors,realisticVisionV13_v13Inpainting.safetensors,realisticVisionV20_v20NoVAE.safetensors,revAnimated_v11.safetensors,revAnimated_v121.safetensors,revAnimated_v122.safetensors,samaritan3dCartoon_v10.safetensors,sd-v1-5-inpainting.ckpt,simplemix_V2.safetensors,stickerArt_sticker.safetensors,tAnimeV2_v20.safetensors,tShirtPrintDesignsTest_v01.ckpt,toonyou_beta2.safetensors,v1-5-pruned-emaonly.ckpt,v1-5-pruned.ckpt,v2-1_512-ema-pruned.ckpt,v2-1_768-nonema-pruned.ckpt,vynstickBWVinyl_any3Version.safetensors,wd-1-3-penultimate-ucg-cont.ckpt,wd-1-5-beta2-aesthetic-fp16.safetensors,wd-1-5-beta2-fp16.safetensors,wd-v1-3-float32.ckpt,wd1-2_sd1-4_merged.ckpt,xxmix9realistic_v30.safetensors,xxmix9realistic_v40.safetensors,yu_jie_half.ckpt"
+    ],
+    [
+      15,
+      14,
+      0,
+      12,
+      0,
+      "anything_v3.yaml,v1-inference.yaml,v1-inference_clip_skip_2.yaml,v1-inference_clip_skip_2_fp16.yaml,v1-inference_fp16.yaml,v1-inpainting-inference.yaml,v2-inference-v.yaml,v2-inference-v_fp32.yaml,v2-inference.yaml,v2-inference_fp32.yaml,v2-inpainting-inference.yaml"
+    ],
+    [
+      16,
+      12,
+      0,
+      2,
+      0,
+      "MODEL"
+    ],
+    [
+      19,
+      12,
+      2,
+      2,
+      2,
+      "VAE"
+    ],
+    [
+      21,
+      12,
+      1,
+      2,
+      1,
+      "CLIP"
+    ],
+    [
+      22,
+      15,
+      0,
+      2,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      23,
+      16,
+      0,
+      2,
+      4,
+      "CONDITIONING"
+    ],
+    [
+      24,
+      12,
+      1,
+      16,
+      0,
+      "CLIP"
+    ],
+    [
+      25,
+      12,
+      1,
+      15,
+      0,
+      "CLIP"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4,
+  "output": {
+    "2": {
+      "inputs": {
+        "model": [
+          "12",
+          0
+        ],
+        "clip": [
+          "12",
+          1
+        ],
+        "vae": [
+          "12",
+          2
+        ],
+        "positive": [
+          "15",
+          0
+        ],
+        "negative": [
+          "16",
+          0
+        ]
+      },
+      "class_type": "ToBasicPipe"
+    },
+    "7": {
+      "inputs": {}
+    },
+    "8": {
+      "inputs": {
+        "basic_pipe": [
+          "2",
+          0
+        ],
+        "vae": [
+          "9",
+          0
+        ]
+      },
+      "class_type": "EditBasicPipe"
+    },
+    "9": {
+      "inputs": {}
+    },
+    "10": {
+      "inputs": {
+        "BASIC_PIPE": [
+          "8",
+          0
+        ]
+      }
+    },
+    "12": {
+      "inputs": {
+        "config_name": [
+          "14",
+          0
+        ],
+        "ckpt_name": [
+          "7",
+          0
+        ]
+      },
+      "class_type": "CheckpointLoader"
+    },
+    "14": {
+      "inputs": {}
+    },
+    "15": {
+      "inputs": {
+        "text": "",
+        "clip": [
+          "12",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "16": {
+      "inputs": {
+        "text": "",
+        "clip": [
+          "12",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode"
+    }
+  }
+}
